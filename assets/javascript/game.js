@@ -7,10 +7,33 @@ $(document).ready(function(){
 	var enemyChoiceTwo = $("<img>");
 	var enemyChoiceThree = $("<img>");
 	var defenderPick = $("<img>");
+
 	var IndyHero = false;
 	var NaziHero = false;
 	var ShamanHero = false;
 	var BoulderHero = false;
+
+	var NewDefenderSelection = false;
+	var IndyDefender = false;
+	var NaziDefender = false;
+	var ShamanDefender = false;
+	var BoulderDefender = false;
+
+	var IndyHP = 150;
+	var IndyBaseAttack = 10;
+	var IndyAttackGain = 25;
+
+	var NaziHP = 50;
+	var NaziBaseAttack = 25;
+	var NaziAttackGain = 50;
+
+	var ShamanHP = 125;
+	var ShamanBaseAttack = 5;
+	var ShamanAttackGain = 30;
+
+	var BoulderHP = 500;
+	var BoulderBaseAttack = 0;
+	var BoulderAttackGain = 100;
 
 
 
@@ -31,6 +54,10 @@ $(document).ready(function(){
 			// NaziEnemy = true;
 			// ShamanEnemy = true;
 			// BoulderEnemy = true;
+			console.log("Boulder: " + BoulderHero);
+			console.log("Indy: " + IndyHero);
+			console.log("Shaman: " + ShamanHero);
+			console.log("Nazi: " + NaziHero);
 
 		}
 
@@ -56,6 +83,10 @@ $(document).ready(function(){
 			// ShamanEnemy = true;
 			// BoulderEnemy = true;
 			// IndyEnemy = true;
+			console.log("Boulder: " + BoulderHero);
+			console.log("Indy: " + IndyHero);
+			console.log("Shaman: " + ShamanHero);
+			console.log("Nazi: " + NaziHero);
 
 		}
 
@@ -80,6 +111,10 @@ $(document).ready(function(){
 			// BoulderEnemy = true;
 			// IndyEnemy = true;
 			// NaziEnemy = true;
+			console.log("Boulder: " + BoulderHero);
+			console.log("Indy: " + IndyHero);
+			console.log("Shaman: " + ShamanHero);
+			console.log("Nazi: " + NaziHero);
 
 		}
 
@@ -100,9 +135,14 @@ $(document).ready(function(){
 			$(".ChooseEnemySlotThree").append(enemyChoiceThree);
 			$(".StarterImage").hide();
 			BoulderHero = true;
+			
 			// IndyEnemy = true;
 			// NaziEnemy = true;
 			// ShamanEnemy = true;
+			console.log("Boulder: " + BoulderHero);
+			console.log("Indy: " + IndyHero);
+			console.log("Shaman: " + ShamanHero);
+			console.log("Nazi: " + NaziHero);
 		}
 
 
@@ -112,18 +152,33 @@ $(document).ready(function(){
 
 	$(".ChooseEnemySlotOne").on("click", function(){
 
-		console.log(IndyHero);
+
+		if (NewDefenderSelection === true) {
+			$(".ChooseEnemySlotTwo").show();
+			$(".ChooseEnemySlotThree").show();
+		}
 
 		if (IndyHero === true || ShamanHero === true || BoulderHero === true) {
 			defenderPick.attr("id", "NaziChosen").attr("src", "assets/images/bg.png");
 			$(".Defender").append(defenderPick);
 			$(".ChooseEnemySlotOne").hide();
+			NewDefenderSelection = true;
+			NaziDefender = true;
+			IndyDefender = false;
+			ShamanDefender = false;
+			BoulderDefender = false;
+
 		}
 
 		if (NaziHero === true) {
 			defenderPick.attr("id", "IndyChosen").attr("src", "assets/images/Indiana-Jones.jpg");
 			$(".Defender").append(defenderPick);
 			$(".ChooseEnemySlotOne").hide();
+			NewDefenderSelection = true;
+			IndyDefender = true;
+			ShamanDefender = false;
+			BoulderDefender = false;
+			NaziDefender = false;
 		}
 
 
@@ -131,36 +186,141 @@ $(document).ready(function(){
 
 	$(".ChooseEnemySlotTwo").on("click", function(){
 
-		console.log(IndyHero);
+
+		if (NewDefenderSelection === true) {
+			$(".ChooseEnemySlotOne").show();
+			$(".ChooseEnemySlotThree").show();
+		}
 
 		if (IndyHero === true || NaziHero === true || BoulderHero === true) {
 			defenderPick.attr("id", "ShamanChosen").attr("src", "assets/images/shaman.jpg");
 			$(".Defender").append(defenderPick);
 			$(".ChooseEnemySlotTwo").hide();
+			NewDefenderSelection = true;
+			ShamanDefender = true;
+			BoulderDefender = false;
+			NaziDefender = false;
+			IndyDefender = false;
 		}
 
 		if (ShamanHero === true) {
 			defenderPick.attr("id", "IndyChosen").attr("src", "assets/images/Indiana-Jones.jpg");
 			$(".Defender").append(defenderPick);
 			$(".ChooseEnemySlotTwo").hide();
+			NewDefenderSelection = true;
+			IndyDefender = true;
+			ShamanDefender = false;
+			BoulderDefender = false;
+			NaziDefender = false;
 		}
 
 	})
 
 	$(".ChooseEnemySlotThree").on("click", function(){
 
-		console.log(IndyHero);
+
+		if (NewDefenderSelection === true) {
+			$(".ChooseEnemySlotTwo").show();
+			$(".ChooseEnemySlotOne").show();
+		}
 
 		if (IndyHero === true || NaziHero === true || ShamanHero === true) {
 			defenderPick.attr("id", "BoulderChosen").attr("src", "assets/images/rock.jpg");
 			$(".Defender").append(defenderPick);
 			$(".ChooseEnemySlotThree").hide();
+			NewDefenderSelection = true;
+			BoulderDefender = true;
+			NaziDefender = false;
+			IndyDefender = false;
+			ShamanDefender = false;
 		}
 
 		if (BoulderHero === true) {
 			defenderPick.attr("id", "IndyChosen").attr("src", "assets/images/Indiana-Jones.jpg");
 			$(".Defender").append(defenderPick);
 			$(".ChooseEnemySlotThree").hide();
+			NewDefenderSelection = true;
+			IndyDefender = true;
+			ShamanDefender = false;
+			BoulderDefender = false;
+			NaziDefender = false;
+		}
+
+	})
+
+	$(".FightButton").on("click", function(){
+
+		if (IndyHero === true && NaziDefender === true){
+			NaziHP = NaziHP - IndyBaseAttack;
+			IndyHP = IndyHP - NaziBaseAttack;
+			IndyBaseAttack = IndyBaseAttack + IndyAttackGain;
+
+		}
+
+		else if (IndyHero === true && ShamanDefender === true){
+			ShamanHP = ShamanHP - IndyBaseAttack;
+			IndyHP = IndyHP - ShamanBaseAttack;
+			IndyBaseAttack = IndyBaseAttack + IndyAttackGain;
+		}
+
+		else if (IndyHero === true && BoulderDefender === true){
+			BoulderHP = BoulderHP - IndyBaseAttack;
+			IndyHP = IndyHP - BoulderBaseAttack;
+			IndyBaseAttack = IndyBaseAttack + IndyAttackGain;
+		}
+
+		else if (NaziHero === true && IndyDefender === true){
+			IndyHP = IndyHP - NaziBaseAttack;
+			NaziHP = NaziHP - IndyBaseAttack;
+			NaziBaseAttack = NaziBaseAttack + NaziAttackGain;
+		}
+
+		else if (NaziHero === true && ShamanDefender === true){
+			ShamanHP = ShamanHP - NaziBaseAttack;
+			NaziHP = NaziHP - ShamanBaseAttack;
+			NaziBaseAttack = NaziBaseAttack + NaziAttackGain;
+		}
+
+		else if (NaziHero === true && BoulderDefender === true){
+			BoulderHP = BoulderHP - NaziBaseAttack;
+			NaziHP = NaziHP - BoulderBaseAttack;
+			NaziBaseAttack = NaziBaseAttack + NaziAttackGain;
+		}
+
+		else if (ShamanHero === true && IndyDefender === true){
+			IndyHP = IndyHP - ShamanBaseAttack;
+			ShamanHP = ShamanHP - IndyBaseAttack;
+			ShamanBaseAttack = ShamanBaseAttack + ShamanAttackGain;
+		}
+
+		else if (ShamanHero === true && NaziDefender === true){
+			NaziHP = NaziHP - ShamanBaseAttack;
+			ShamanHP = ShamanHP - NaziBaseAttack;
+			ShamanBaseAttack = ShamanBaseAttack + ShamanAttackGain;
+		}
+
+		else if (ShamanHero === true && BoulderDefender === true){
+			BoulderHP = BoulderHP - ShamanBaseAttack;
+			ShamanHP = ShamanHP - BoulderBaseAttack;
+			ShamanBaseAttack = ShamanBaseAttack + ShamanAttackGain;
+		}
+
+		else if (BoulderHero === true && IndyDefender === true){
+			BoulderHP = BoulderHP - IndyBaseAttack;
+			IndyHP = IndyHP - BoulderBaseAttack;
+			BoulderBaseAttack = BoulderBaseAttack + BoulderAttackGain;
+		}
+
+		else if (BoulderHero === true && NaziDefender === true){
+			NaziHP = NaziHP - BoulderBaseAttack;
+			BoulderHP = BoulderHP - NaziBaseAttack;
+			BoulderBaseAttack = BoulderBaseAttack + BoulderAttackGain;
+		}
+
+		else if (BoulderHero === true && ShamanDefender === true){
+			BoulderHP = BoulderHP - ShamanBaseAttack;
+			ShamanHP = ShamanHP - BoulderBaseAttack;
+			BoulderBaseAttack = BoulderBaseAttack + BoulderAttackGain;
 		}
 
 	})
@@ -266,7 +426,9 @@ $(document).ready(function(){
 
 
 
+		// function attackCharacter(first Character, sencondCharacter){
 
+		// }
 
 
 
