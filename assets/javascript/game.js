@@ -321,6 +321,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + NaziBaseAttack + " damage");
 			if (IndyHP <= 0) {
 				
+				IndyHero = false;
 				losegame();
 				resetgame();
 
@@ -354,6 +355,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + ShamanBaseAttack + " damage");
 			if (IndyHP <= 0) {
 				
+				IndyHero = false;
 				losegame();
 				resetgame();
 
@@ -383,6 +385,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + BoulderBaseAttack + " damage");
 			if (IndyHP <= 0) {
 
+				IndyHero = false;
 				losegame();
 				resetgame();
 			}
@@ -411,6 +414,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + IndyBaseAttack + " damage");
 			if (NaziHP <= 0) {
 				
+				NaziHero = false;
 				losegame();
 				resetgame();
 
@@ -440,6 +444,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + ShamanBaseAttack + " damage");
 			if (NaziHP <= 0) {
 				
+				NaziHero = false;
 				losegame();
 				resetgame();
 
@@ -469,6 +474,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + BoulderBaseAttack + " damage");
 			if (NaziHP <= 0) {
 				
+				NaziHero = false;
 				losegame();
 				resetgame();
 
@@ -500,6 +506,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + IndyBaseAttack + " damage");
 			if (ShamanHP <= 0) {
 				
+				ShamanHero = false;
 				losegame();
 				resetgame();
 
@@ -529,6 +536,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + NaziBaseAttack + " damage");
 			if (ShamanHP <= 0) {
 				
+				ShamanHero = false;
 				losegame();
 				resetgame();
 
@@ -559,6 +567,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + BoulderBaseAttack + " damage");
 			if (ShamanHP <= 0) {
 				
+				ShamanHero = false;
 				losegame();
 				resetgame();
 
@@ -590,6 +599,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + IndyBaseAttack + " damage");
 			if (BoulderHP <= 0) {
 				
+				BoulderHero = false;
 				losegame();
 				resetgame();
 
@@ -618,7 +628,8 @@ $(document).ready(function(){
 			$(".MessageOne").html("You attacked for " + BoulderBaseAttack + " damage");
 			$(".MessageTwo").html("Your enemy attacked you for " + NaziBaseAttack + " damage");
 			if (BoulderHP <= 0) {
-				
+
+				BoulderHero = false;
 				losegame();
 				resetgame();
 
@@ -650,6 +661,7 @@ $(document).ready(function(){
 			$(".MessageTwo").html("Your enemy attacked you for " + ShamanBaseAttack + " damage");
 			if (BoulderHP <= 0) {
 				
+				BoulderHero = false;
 				losegame();
 				resetgame();
 
