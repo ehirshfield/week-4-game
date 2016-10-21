@@ -7,6 +7,7 @@ $(document).ready(function(){
 	var enemyChoiceTwo = $("<img>");
 	var enemyChoiceThree = $("<img>");
 	var defenderPick = $("<img>");
+	var resetButton = $("<button>");
 
 	var IndyHero = false;
 	var NaziHero = false;
@@ -31,8 +32,8 @@ $(document).ready(function(){
 	var ShamanBaseAttack = 5;
 	var ShamanAttackGain = 30;
 
-	var BoulderHP = 500;
-	var BoulderBaseAttack = 0;
+	var BoulderHP = 300;
+	var BoulderBaseAttack = 30;
 	var BoulderAttackGain = 100;
 
 	var IndyNameTag = "Indiana Jones"
@@ -44,6 +45,10 @@ $(document).ready(function(){
 	$(".StartNaziHealth").html(NaziHP);
 	$(".StartShamanHealth").html(ShamanHP);
 	$(".StartBoulderHealth").html(BoulderHP);
+
+	$(".ResetGame").hide();
+
+	
 
 
 
@@ -75,13 +80,7 @@ $(document).ready(function(){
 			$(".StarterImage").hide();
 
 			IndyHero = true;
-			// NaziEnemy = true;
-			// ShamanEnemy = true;
-			// BoulderEnemy = true;
-			console.log("Boulder: " + BoulderHero);
-			console.log("Indy: " + IndyHero);
-			console.log("Shaman: " + ShamanHero);
-			console.log("Nazi: " + NaziHero);
+			
 			$("h1").hide();
 			$("h2").hide();
 
@@ -118,13 +117,8 @@ $(document).ready(function(){
 
 			$(".StarterImage").hide();
 			NaziHero = true;
-			// ShamanEnemy = true;
-			// BoulderEnemy = true;
-			// IndyEnemy = true;
-			console.log("Boulder: " + BoulderHero);
-			console.log("Indy: " + IndyHero);
-			console.log("Shaman: " + ShamanHero);
-			console.log("Nazi: " + NaziHero);
+			$("h1").hide();
+			$("h2").hide();
 
 		}
 
@@ -157,13 +151,8 @@ $(document).ready(function(){
 
 			$(".StarterImage").hide();
 			ShamanHero = true;
-			// BoulderEnemy = true;
-			// IndyEnemy = true;
-			// NaziEnemy = true;
-			console.log("Boulder: " + BoulderHero);
-			console.log("Indy: " + IndyHero);
-			console.log("Shaman: " + ShamanHero);
-			console.log("Nazi: " + NaziHero);
+			$("h1").hide();
+			$("h2").hide();
 
 		}
 
@@ -197,13 +186,8 @@ $(document).ready(function(){
 			$(".StarterImage").hide();
 			BoulderHero = true;
 			
-			// IndyEnemy = true;
-			// NaziEnemy = true;
-			// ShamanEnemy = true;
-			console.log("Boulder: " + BoulderHero);
-			console.log("Indy: " + IndyHero);
-			console.log("Shaman: " + ShamanHero);
-			console.log("Nazi: " + NaziHero);
+			$("h1").hide();
+			$("h2").hide();
 		}
 
 
@@ -333,9 +317,8 @@ $(document).ready(function(){
 			IndyBaseAttack = IndyBaseAttack + IndyAttackGain;
 			$(".ChosenHealth").html(IndyHP);
 			$(".DefenderHealth").html(NaziHP);
-			console.log("IndyHP: " + IndyHP);
-			console.log("NaziHP: " + NaziHP);
-			console.log("IndyBaseAttack: " + IndyBaseAttack);
+			$(".MessageOne").html("You attacked for " + IndyBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + NaziBaseAttack + " damage");
 			if (IndyHP <= 0) {
 				
 				losegame();
@@ -349,8 +332,13 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotOneName").empty();
 				$(".SlotOneHealth").empty();
-				console.log("DEAD");
+				NaziDefender = false;
+				
 
+
+			}
+			if (BoulderHP <= 0 && ShamanHP <= 0 && NaziHP <= 0) {
+				wingame();
 			}
 			
 
@@ -362,6 +350,8 @@ $(document).ready(function(){
 			IndyBaseAttack = IndyBaseAttack + IndyAttackGain;
 			$(".ChosenHealth").html(IndyHP);
 			$(".DefenderHealth").html(ShamanHP);
+			$(".MessageOne").html("You attacked for " + IndyBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + ShamanBaseAttack + " damage");
 			if (IndyHP <= 0) {
 				
 				losegame();
@@ -375,10 +365,12 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotTwoName").empty();
 				$(".SlotTwoHealth").empty();
+				ShamanDefender = false;
+				
 			}
-			console.log("IndyHP: " + IndyHP);
-			console.log("ShamanHP: " + ShamanHP);
-			console.log("IndyBaseAttack: " + IndyBaseAttack);
+			if (BoulderHP <= 0 && ShamanHP <= 0 && NaziHP <= 0) {
+				wingame();
+			}
 		}
 
 		else if (IndyHero === true && BoulderDefender === true){
@@ -387,6 +379,8 @@ $(document).ready(function(){
 			IndyBaseAttack = IndyBaseAttack + IndyAttackGain;
 			$(".ChosenHealth").html(IndyHP);
 			$(".DefenderHealth").html(BoulderHP);
+			$(".MessageOne").html("You attacked for " + IndyBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + BoulderBaseAttack + " damage");
 			if (IndyHP <= 0) {
 
 				losegame();
@@ -399,6 +393,11 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotThreeName").empty();
 				$(".SlotThreeHealth").empty();
+				BoulderDefender = false;
+				
+			}
+			if (BoulderHP <= 0 && ShamanHP <= 0 && NaziHP <= 0) {
+				wingame();
 			}
 		}
 
@@ -408,6 +407,8 @@ $(document).ready(function(){
 			NaziBaseAttack = NaziBaseAttack + NaziAttackGain;
 			$(".ChosenHealth").html(NaziHP);
 			$(".DefenderHealth").html(IndyHP);
+			$(".MessageOne").html("You attacked for " + NaziBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + IndyBaseAttack + " damage");
 			if (NaziHP <= 0) {
 				
 				losegame();
@@ -421,6 +422,11 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotOneName").empty();
 				$(".SlotOneHealth").empty();
+				IndyDefender = false;
+				
+			}
+			if (BoulderHP <= 0 && ShamanHP <= 0 && IndyHP <= 0) {
+				wingame();
 			}
 		}
 
@@ -430,6 +436,8 @@ $(document).ready(function(){
 			NaziBaseAttack = NaziBaseAttack + NaziAttackGain;
 			$(".ChosenHealth").html(NaziHP);
 			$(".DefenderHealth").html(ShamanHP);
+			$(".MessageOne").html("You attacked for " + NaziBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + ShamanBaseAttack + " damage");
 			if (NaziHP <= 0) {
 				
 				losegame();
@@ -443,6 +451,11 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotTwoName").empty();
 				$(".SlotTwoHealth").empty();
+				ShamanDefender = false;
+				
+			}
+			if (BoulderHP <= 0 && ShamanHP <= 0 && IndyHP <= 0) {
+				wingame();
 			}
 		}
 
@@ -452,6 +465,8 @@ $(document).ready(function(){
 			NaziBaseAttack = NaziBaseAttack + NaziAttackGain;
 			$(".ChosenHealth").html(NaziHP);
 			$(".DefenderHealth").html(BoulderHP);
+			$(".MessageOne").html("You attacked for " + NaziBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + BoulderBaseAttack + " damage");
 			if (NaziHP <= 0) {
 				
 				losegame();
@@ -465,6 +480,11 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotThreeName").empty();
 				$(".SlotThreeHealth").empty();
+				BoulderDefender = false;
+				
+			}
+			if (BoulderHP <= 0 && ShamanHP <= 0 && IndyHP <= 0) {
+				wingame();
 			}
 
 
@@ -476,6 +496,8 @@ $(document).ready(function(){
 			ShamanBaseAttack = ShamanBaseAttack + ShamanAttackGain;
 			$(".ChosenHealth").html(ShamanHP);
 			$(".DefenderHealth").html(IndyHP);
+			$(".MessageOne").html("You attacked for " + ShamanBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + IndyBaseAttack + " damage");
 			if (ShamanHP <= 0) {
 				
 				losegame();
@@ -489,6 +511,11 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotTwoName").empty();
 				$(".SlotTwoHealth").empty();
+				IndyDefender = false;
+				
+			}
+			if (BoulderHP <= 0 && NaziHP <= 0 && IndyHP <= 0) {
+				wingame();
 			}
 		}
 
@@ -498,6 +525,8 @@ $(document).ready(function(){
 			ShamanBaseAttack = ShamanBaseAttack + ShamanAttackGain;
 			$(".ChosenHealth").html(ShamanHP);
 			$(".DefenderHealth").html(NaziHP);
+			$(".MessageOne").html("You attacked for " + ShamanBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + NaziBaseAttack + " damage");
 			if (ShamanHP <= 0) {
 				
 				losegame();
@@ -511,6 +540,11 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotOneName").empty();
 				$(".SlotOneHealth").empty();
+				NaziDefender = false;
+				
+			}
+			if (BoulderHP <= 0 && NaziHP <= 0 && IndyHP <= 0) {
+				wingame();
 			}
 
 		}
@@ -521,6 +555,8 @@ $(document).ready(function(){
 			ShamanBaseAttack = ShamanBaseAttack + ShamanAttackGain;
 			$(".ChosenHealth").html(ShamanHP);
 			$(".DefenderHealth").html(BoulderHP);
+			$(".MessageOne").html("You attacked for " + ShamanBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + BoulderBaseAttack + " damage");
 			if (ShamanHP <= 0) {
 				
 				losegame();
@@ -534,6 +570,11 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotThreeName").empty();
 				$(".SlotThreeHealth").empty();
+				BoulderDefender = false;
+				
+			}
+			if (BoulderHP <= 0 && NaziHP <= 0 && IndyHP <= 0) {
+				wingame();
 			}
 
 
@@ -545,6 +586,8 @@ $(document).ready(function(){
 			BoulderBaseAttack = BoulderBaseAttack + BoulderAttackGain;
 			$(".ChosenHealth").html(BoulderHP);
 			$(".DefenderHealth").html(IndyHP);
+			$(".MessageOne").html("You attacked for " + BoulderBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + IndyBaseAttack + " damage");
 			if (BoulderHP <= 0) {
 				
 				losegame();
@@ -558,6 +601,11 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotThreeName").empty();
 				$(".SlotThreeHealth").empty();
+				IndyDefender = false;
+				
+			}
+			if (ShamanHP <= 0 && NaziHP <= 0 && IndyHP <= 0) {
+				wingame();
 			}
 		}
 
@@ -567,6 +615,8 @@ $(document).ready(function(){
 			BoulderBaseAttack = BoulderBaseAttack + BoulderAttackGain;
 			$(".ChosenHealth").html(BoulderHP);
 			$(".DefenderHealth").html(NaziHP);
+			$(".MessageOne").html("You attacked for " + BoulderBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + NaziBaseAttack + " damage");
 			if (BoulderHP <= 0) {
 				
 				losegame();
@@ -580,6 +630,12 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotOneName").empty();
 				$(".SlotOneHealth").empty();
+				NaziDefender = false;
+				
+
+			}
+			if (ShamanHP <= 0 && NaziHP <= 0 && IndyHP <= 0) {
+				wingame();
 			}
 
 		}
@@ -590,6 +646,8 @@ $(document).ready(function(){
 			BoulderBaseAttack = BoulderBaseAttack + BoulderAttackGain;
 			$(".ChosenHealth").html(BoulderHP);
 			$(".DefenderHealth").html(ShamanHP);
+			$(".MessageOne").html("You attacked for " + BoulderBaseAttack + " damage");
+			$(".MessageTwo").html("Your enemy attacked you for " + ShamanBaseAttack + " damage");
 			if (BoulderHP <= 0) {
 				
 				losegame();
@@ -603,22 +661,48 @@ $(document).ready(function(){
 				$(".DefenderHealth").empty();
 				$(".SlotTwoName").empty();
 				$(".SlotTwoHealth").empty();
+				ShamanDefender = false;
+
+				
+				
 			}
+
+			if (ShamanHP <= 0 && NaziHP <= 0 && IndyHP <= 0) {
+				wingame();
+			}
+			
+
 		}
+
+		
 
 
 	})
 
 
 	function losegame() {
-		console.log("You lose!");
+		$(".MessageOne").html("You have been defeated. GAME OVER!");
+		$(".MessageTwo").empty();
+
 	}
 
 	function resetgame() {
-		console.log("Reset");
+		$(".ResetGame").show();
 	}
-			
 
+	$(".ResetGame").on("click", function(){
+		location.reload();
+
+	})
+
+	function wingame() {
+		$(".MessageOne").html("You Win!!! Play Again!");
+		$(".MessageTwo").empty();
+		$(".ResetGame").show();
+	}
+				
+	
+	
 
 
 

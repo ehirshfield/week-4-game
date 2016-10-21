@@ -1,79 +1,74 @@
 #Indy {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 	
 
 }
 
 #Nazi {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 }
 
 #Shaman {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 }
 
 #Boulder {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 }
 
 #IndyChosen {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 	
 }
 
 #NaziChosen {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 }
 
 #ShamanChosen {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 }
 
 #BoulderChosen {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 }
 
-.StarterImage{
 
-}
-
-.ChosenCharacter {
-
-
-}
-
-.EnemiesAvailable {
-
-}
-
-.FightButton {
-
-}
-
-.Defender {
-
-}
 
 .FightButtonDiv {
 	text-align: center;
 }
 
-.FightButton {
 
-}
 
 h1 {
 	text-align: center;
 }
-
-.row {
+h2 {
 	text-align: center;
+}
+h3{
+	text-align: center;
+}
+
+
+body {
+	background-image: url(../images/jungle.jpg);
+	color: #ffffff;
+}
+
+.MessageOne {
+	font-size: 20px;
+}
+
+.MessageTwo {
+	font-size: 20px;
 }

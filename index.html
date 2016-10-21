@@ -11,105 +11,147 @@
 	<body>
 
 		<h1> Indiana Jones RPG!</h1>
+		<div class="container">
+			<div class="row">
+				<h2>Pick any character to fight with!
+				</h2>
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8 text-center">
+					<div class="StarterImage col-md-3">
+							<div class="IndyName">Indiana Jones</div>
+							<img id="Indy" src="assets/images/Indiana-Jones.jpg">
+							<div class="StartIndyHealth"></div>
+					</div>
+					<div class="StarterImage col-md-3">
+						
+							<div class="NaziName">Arnold Ernst Toht</div>
+							<img id="Nazi" src="assets/images/bg.png">
+							<div class="StartNaziHealth"></div>
+						
+					</div>
+					<div class= "StarterImage col-md-3">
+						
+							<div class="ShamanName">Mola Ram</div>
+							<img id="Shaman" src="assets/images/shaman.jpg">
+							<div class="StartShamanHealth"></div>
+						
+					</div>
+					<div class="StarterImage col-md-3">
+						
+							<div class="BoulderName">Boulder</div>
+							<img id="Boulder" src="assets/images/rock.jpg">
+							<div class="StartBoulderHealth"></div>
+						
+					</div>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
 
-		<div class="row">
-			<h2>Pick any character to fight with!
-			</h2>
+			<div class="row">
+				
+				<div class="col-md-6">
+					<h3>Chosen Character
+					</h3>
+					<div class="ChosenContainer text-center">
+						<div class="ChosenName">
+						</div>
+						<div class="ChosenCharacter">
+							
+						</div>
+						<div class="ChosenHealth">
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<h3>Defender
+					</h3>
+					<div class="DefenderContainer text-center">
+						<div class="DefenderName">
+						</div>
+						<div class="Defender">
+							
+						</div>
+						<div class="DefenderHealth">
+						</div>
+					</div>
+				</div>
+			</div>
 
-			<div class="StarterImage col-md-3">
-					<div class="IndyName">Indiana Jones</div>
-					<img id="Indy" src="assets/images/Indiana-Jones.jpg">
-					<div class="StartIndyHealth"></div>
+			<div class="row">
+				<h3>Chose an Enemy to Fight
+				</h3>
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8 text-center">
+				
+					<div class="SlotOne col-md-4">
+						<div class="SlotOneName">
+						</div>
+						<div class="ChooseEnemySlotOne">
+						</div>
+						<div class="SlotOneHealth">
+						</div>
+					</div>
+					<div class="SlotTwo col-md-4">
+						<div class="SlotTwoName">
+						</div>
+						<div class="ChooseEnemySlotTwo">
+						</div>
+						<div class="SlotTwoHealth">
+						</div>
+					</div>
+					<div class="SlotThree col-md-4">
+						<div class="SlotThreeName">
+						</div>
+						<div class="ChooseEnemySlotThree">
+						</div>
+						<div class="SlotThreeHealth">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+				</div>
 			</div>
-			<div class="StarterImage col-md-3">
-				
-					<div class="NaziName">Arnold Ernst Toht</div>
-					<img id="Nazi" src="assets/images/bg.png">
-					<div class="StartNaziHealth"></div>
-				
+			<div class="row">
+				<div class="ButtonContainer">
+					<h3>Fight Selector
+					</h3>
+					<div class="FightButtonDiv">
+						<button class="FightButton btn-default btn-primary">
+							Fight!
+						</button>
+					</div>
+					<div class="ResetButtonDiv text-center">
+						<button class="ResetGame btn-default btn-warning">
+						Reset
+						</button>
+					</div>
+				</div>
 			</div>
-			<div class= "StarterImage col-md-3">
-				
-					<div class="ShamanName">Mola Ram</div>
-					<img id="Shaman" src="assets/images/shaman.jpg">
-					<div class="StartShamanHealth"></div>
-				
-			</div>
-			<div class="StarterImage col-md-3">
-				
-					<div class="BoulderName">Boulder</div>
-					<img id="Boulder" src="assets/images/rock.jpg">
-					<div class="StartBoulderHealth"></div>
-				
-			</div>
+			<div class="row text-center">
+				<div class="MessageOne">
+				</div>
+				<div class="MessageTwo">
+				</div>
 
+			</div>
+			<!-- <div class="row">
+				<h3>Defender
+				</h3>
+				<div class="DefenderContainer col-md-12">
 
-		</div>
-
-		<div class="row">
-			<h3>Chosen Character
-			</h3>
-			<div class="col-md-12">
-				<div class="ChosenName">
+					<div class="DefenderName">
+					</div>
+					<div class="Defender">
+						
+					</div>
+					<div class="DefenderHealth">
+					</div>
 				</div>
-				<div class="ChosenCharacter">
-					
-				</div>
-				<div class="ChosenHealth">
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<h3>Chose an Enemy to Fight
-			</h3>
-			
-			<div class="SlotOne col-md-4">
-				<div class="SlotOneName">
-				</div>
-				<div class="ChooseEnemySlotOne">
-				</div>
-				<div class="SlotOneHealth">
-				</div>
-			</div>
-			<div class="SlotTwo col-md-4">
-				<div class="SlotTwoName">
-				</div>
-				<div class="ChooseEnemySlotTwo">
-				</div>
-				<div class="SlotTwoHealth">
-				</div>
-			</div>
-			<div class="SlotThree col-md-4">
-				<div class="SlotThreeName">
-				</div>
-				<div class="ChooseEnemySlotThree">
-				</div>
-				<div class="SlotThreeHealth">
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<h3>Fight Selector
-			</h3>
-			<div class="FightButtonDiv">
-				<button class="FightButton btn-default btn-primary">
-					Fight!
-				</button>
-			</div>
-		</div>
-		<div class="row">
-			<h3>Defender
-			</h3>
-			<div class="DefenderContainer col-md-12">
-				<div class="DefenderName">
-				</div>
-				<div class="Defender">
-					
-				</div>
-				<div class="DefenderHealth">
-				</div>
-			</div>
+			</div> -->
 		</div>
 
 	<script type="text/javascript" src="assets/javascript/game.js">
